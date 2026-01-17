@@ -1,0 +1,550 @@
+<html lang="zh-CN">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   艺术画廊 - 创意作品展示
+  </title>
+  <script src="https://res.gemcoder.com/js/reload.js">
+  </script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <script>
+   tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#121212',
+        secondary: '#1E1E1E',
+        accent: '#FF3366',
+        light: '#F5F5F5'
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+};
+  </script>
+  <style type="text/tailwindcss">
+   @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .gallery-grid {
+                display: grid;
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 1.5rem;
+            }
+            .art-card {
+                @apply bg-secondary rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,51,102,0.2)] hover:-translate-y-1;
+            }
+.art-image {
+                @apply w-full aspect-[3/4] object-cover transition-transform duration-700 hover:scale-105 cursor-zoom-in;
+            }
+            .back-button {
+                @apply fixed top-6 left-6 bg-secondary/80 backdrop-blur-sm text-light px-4 py-2 rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-accent z-50;
+            }
+}
+        #imageViewer div {
+            transition: opacity 0.3s ease;
+        }
+        #viewerImage {
+            max-height: 90vh;
+        }
+  </style>
+ </head>
+ <body class="bg-primary text-light min-h-screen">
+  <!-- 返回按钮 -->
+<a class="back-button" href="https://www.loser.wiki">
+   <i class="fas fa-arrow-left">
+   </i>
+   <span>
+    返回
+   </span>
+  </a>
+  <!-- 画廊标题 -->
+  <header class="py-12 px-6 md:px-12 text-center">
+   <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight mb-2" data-yteditvalue="">
+   </h1>
+   <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+    探索未来拜占庭宫廷系列，每一幅作品都讲述着独特的故事
+   </p>
+  </header>
+  <!-- 画廊主体 -->
+  <main class="px-6 md:px-12 pb-20">
+   <div class="gallery-grid">
+    <!-- 艺术作品1 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="抽象数字艺术" class="art-image" src="https://cdn.midjourney.com/46ac6d9f-1088-466b-9429-de1d1cdeca1d/0_2.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       霓虹几何
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       数字艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品2 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="超现实主义绘画" class="art-image" src="https://media.discordapp.net/attachments/951197655021797436/1408124326972227748/yohanlibertto_knight_HORROR_--chaos_34_--ar_9151_--raw_--sref_ae26b652-b571-40f5-a97c-5fc9eac51518_2.png?ex=68afd9b9&is=68ae8839&hm=c23961bc59fe6352652e1be7b16a5571dac63f9a21e717aee2d0462ab99a7edb&=&format=webp&quality=lossless&width=660&height=370"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       梦境群主
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       超现实主义 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品3 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="赛博朋克城市景观" class="art-image" src="https://media.discordapp.net/attachments/951197655021797436/1404965874879828118/dotails_A_cinematic_shot_of_a_huge_spaceship_with_an_elegant__faa117f7-169d-4ac1-b436-eee043a423a6_0.png?ex=68af90ef&is=68ae3f6f&hm=7a7c8b3ab0defec507de6cdb03ddd82b339f4177cec2d94fcb9a123cb7365c00&=&format=webp&quality=lossless&width=828&height=1045"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       未来拜占庭
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       数字插画 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品4 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="极简线条艺术" class="art-image" src="https://cdn.midjourney.com/460e85e3-377b-46ca-82ad-0ea9c4876cd8/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       眼光
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       线条艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品5 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="波普艺术肖像" class="art-image" src="https://media.discordapp.net/attachments/951197655021797436/1403991059419369472/kindfiercedragon_massive_fantasy_chapel_the_size_of_a_city._Sur_7adbec68-c3a4-4196-88c4-780798d5821f.png?ex=68aff991&is=68aea811&hm=77170a6b8ae2d4ad87719e6cf4f6beed2576876fdc1a3b0e8ae912a3ff172cd6&=&format=webp&quality=lossless&width=1045&height=1045"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       祭祀
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       波普艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品6 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="3D数字雕塑" class="art-image" src="https://cdn.midjourney.com/12085474-929e-4964-9ff2-d4621b26d477/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       红杏
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       3D艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品7 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="水彩风景画" class="art-image" src="https://media.discordapp.net/attachments/1054958023698825266/1408467835684126780/nomadict_the_spider_woman_a_black_wall_in_the_spider_verse_in_t_dd9d6f05-5bb6-49a8-a891-142d610f5193.png?ex=68afc824&is=68ae76a4&hm=13bcb07aa7416384f61bc989c52feb3b0ce921d131aa516037b315b2af116a45&=&format=webp&quality=lossless&width=1747&height=979"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       呜咽和颤抖
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       水彩画 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品8 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="手绘艺术" class="art-image" src="https://media.discordapp.net/attachments/1054958023698825266/1409669386666643537/jonker.__Zarguul_the_bloodknightshot_from_darksouls_3_3d_2d_fus_6f4dc155-8a79-473a-b774-3d951df581d6.png?ex=68af89ec&is=68ae386c&hm=0d368f4fc4ec46edca652c7ad32d65df8d5f14800c954939087ddb37f2738759&=&format=webp&quality=lossless&width=1670&height=1018"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       小小的王
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       街头艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品9 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="数字拼贴艺术" class="art-image" src="https://media.discordapp.net/attachments/1054958023698825266/1408149993373569187/yohanlibertto_knight_HORROR_--chaos_34_--ar_9151_--raw_--sref_0aad3038-a96e-46f3-a963-ad93dcd07849_0.png?ex=68aff1a0&is=68aea020&hm=eacb607f14688685ef14a78cd8912be6a1e1a1f129f03cd274ca2c7aafcb2073&=&format=webp&quality=lossless&width=1747&height=979"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       时空交错
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       数字拼贴 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品10 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="抽象表现主义绘画" class="art-image" src="https://media.discordapp.net/attachments/951197655021797436/1403941110547484673/kindfiercedragon_three_colossal_Braking_Trees_towering_several__11da9732-9a7a-4e39-883a-902daaa84f5e.png?ex=68afcb0c&is=68ae798c&hm=c100bcaa55ef927745eaadf03355c78369f1a86f9af7ddc769378978a22b73d0&=&format=webp&quality=lossless&width=1045&height=1045"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       老虎
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       抽象表现主义 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品11 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="未来主义建筑设计" class="art-image" src="https://cdn.midjourney.com/c125ca58-c83c-4b5e-ba17-84ad5899faba/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       未来之光
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       概念设计 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品12 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="蒸汽波风格插画" class="art-image" src="https://cdn.midjourney.com/a3066bb3-76b9-45c8-8c8c-31a3eb354963/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       先承其重
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       蒸汽波艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品13 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="低多边形风景" class="art-image" src="https://cdn.midjourney.com/406b3652-5c52-45e2-b70e-8b18568daccd/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       何为高雅
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       低多边形艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品14 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="生物机械艺术" class="art-image" src="https://media.discordapp.net/attachments/951197655021797436/1403581136025681970/nomadict_Low_quality_dreamlike_footage_A_lone_figure_stands_on__3b53e981-9e96-4369-b733-d5467e16b6b1.png?ex=68afcd4c&is=68ae7bcc&hm=5687333bdcc829bfa8dab6460d5863afb0ee88a8ba2252f3e1f5552c83a33cde&=&format=webp&quality=lossless&width=1747&height=979"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       角色设定
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       生物机械 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品15 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="手绘漫画风格肖像" class="art-image" src="https://media.discordapp.net/attachments/951197655021797436/1399899748348989460/image.png?ex=68af97bc&is=68ae463c&hm=5f7d0a163fcf93e8d7e67e43b1277797e961e483d2bb1ed14eca0e92d51fdee4&=&format=webp&quality=lossless&width=1045&height=1045"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       首位天启
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       漫画艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品16 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="宇宙太空插画" class="art-image" src="https://cdn.midjourney.com/dde91cd5-3900-491a-b76c-cf8bfacfa163/0_1.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       回望感慨
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       太空艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品17 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="像素艺术场景" class="art-image" src="https://cdn.midjourney.com/0716211b-a600-415f-90c0-2c1a4e1d48bc/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       枭神夺食
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       像素艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品18 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="流体艺术抽象画" class="art-image" src="https://media.discordapp.net/attachments/951197655021797436/1399716012345000127/tort93_my_mind_blank_i_dont_know_what_im_doing_my_eyes_are_sore_f9498116-0ce7-4db3-8e70-5996c826d445.png?ex=68af955e&is=68ae43de&hm=e897a3035453e1105e703d134f7758ed825cff63f2a6ed1bae12964e852290b5&=&format=webp&quality=lossless&width=1170&height=1170"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       色彩空洞
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       流体艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品19 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="未来主义时尚设计" class="art-image" src="https://media.discordapp.net/attachments/1054958023698825266/1407459204587061318/lapo88._insert_blend_images_Reaper_broken_family_connected_with_88b30cb2-93ec-4165-badb-a29a5bfbfb72.png?ex=68b01147&is=68aebfc7&hm=8021e5e9bb0adf96f1fe97fe31cc26b6bf171eb85c6af8f2632faf8765dd7137&=&format=webp&quality=lossless&width=1843&height=922"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       小孩子嘛
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       时尚设计 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品20 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="神话生物插画" class="art-image" src="https://cdn.midjourney.com/5fed41d8-b903-40ee-9693-615e89acdf8d/0_3.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       拜占庭矩阵
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       幻想艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品21 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="城市夜景数字艺术" class="art-image" src="https://cdn.midjourney.com/6918234e-1d0a-4d9d-9479-6fa4b4727a8d/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       奇点
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       数字艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品22 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="手绘自然插画" class="art-image" src="https://media.discordapp.net/attachments/1054958023698825266/1407128353412087902/jonker.__THE_HOLY_MOUNTAIN_SPLITTER_A_CLEAVER_SO_GRAND_AND_LARG_57c71b76-efb2-4a09-ae14-4f3f534b6bed.png?ex=68b02ea6&is=68aedd26&hm=059dae8bfe19ad9d4a95ecf40aac33612ddcb11183afe3d8edc5fdaa4442074b&=&format=webp&quality=lossless&width=1170&height=1170"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       红手套
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       插画艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品23 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="抽象音乐可视化" class="art-image" src="https://cdn.midjourney.com/22445877-f8ed-4782-a3bc-9f224b53f84a/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       白马归途
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       视觉艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品24 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="复古科技概念设计" class="art-image" src="https://media.discordapp.net/attachments/1054958023698825266/1407053028846076026/image.png?ex=68afe87f&is=68ae96ff&hm=3590fee842bd4b3976f6616c60e35a2feadb8fe03ad29aecd754e38adc03fe28&=&format=webp&quality=lossless&width=881&height=1169"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       复古未来
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       概念设计 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品25 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="数字拼贴肖像" class="art-image" src="https://s.mj.run/aIYr1I3thXo"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       头彩：志同道合
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       拼贴艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品26 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="极简主义建筑摄影" class="art-image" src="https://github.com/Saaaa191/Saaaa191.github.io/blob/Saaaa191-patch-1/%E6%9D%90%E8%B4%A8(%E9%BB%91).png?raw=true"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       丝绸蕾丝
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       摄影艺术 · 2025
+      </p>
+     </div>
+    </div>
+    <!-- 艺术作品27 -->
+    <div class="art-card group">
+     <div class="overflow-hidden">
+      <img alt="未来主义交通工具设计" class="art-image" src="https://cdn.midjourney.com/c1c014fa-18ab-4130-abb7-1a895d1d111c/0_0.png"/>
+     </div>
+     <div class="p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 class="font-semibold text-lg">
+       什么未来
+      </h3>
+      <p class="text-gray-400 text-sm mt-1">
+       工业设计 · 2025
+      </p>
+     </div>
+    </div>
+   </div>
+  </main>
+  <!-- 图片查看器模态框 -->
+  <div class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4" id="imageViewer">
+   <button class="absolute top-6 right-6 text-white text-2xl hover:text-accent transition-colors" id="closeViewer">
+    <i class="fas fa-times">
+    </i>
+   </button>
+   <div class="max-w-6xl max-h-[90vh]">
+    <img alt="大图查看" class="w-full h-full object-contain" id="viewerImage" src=""/>
+   </div>
+  </div>
+  <!-- 页脚 -->
+  <footer class="py-8 px-6 text-center text-gray-500 text-sm">
+   <p>
+    © 2025 Loser Art | 展示00后艺术新势力
+   </p>
+  </footer>
+  <script>
+   // 页面加载时初始化
+document.addEventListener('DOMContentLoaded', function () {
+  // 为所有艺术作品卡片添加加载动画效果
+  var artCards = document.querySelectorAll('.art-card');
+  artCards.forEach(function (card, index) {
+    // 错开动画时间，创造层次感
+    setTimeout(function () {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, 100 * index);
+
+    // 初始状态
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  });
+  // 返回按钮交互效果增强
+  var backButton = document.querySelector('.back-button');
+  backButton.addEventListener('mouseenter', function () {
+    backButton.querySelector('i').style.transform = 'translateX(-3px)';
+  });
+  backButton.addEventListener('mouseleave', function () {
+    backButton.querySelector('i').style.transform = 'translateX(0)';
+  });
+backButton.querySelector('i').style.transition = 'transform 0.3s ease';
+  
+  // 图片查看器功能
+  const imageViewer = document.getElementById('imageViewer');
+  const viewerImage = document.getElementById('viewerImage');
+  const closeViewer = document.getElementById('closeViewer');
+  const artImages = document.querySelectorAll('.art-image');
+  
+  // 打开查看器
+  artImages.forEach(img => {
+    img.addEventListener('click', () => {
+      viewerImage.src = img.src;
+      imageViewer.classList.remove('hidden');
+      imageViewer.classList.add('flex');
+      document.body.style.overflow = 'hidden'; // 防止背景滚动
+      
+      // 添加淡入动画
+      setTimeout(() => {
+        imageViewer.querySelector('div').classList.add('opacity-100');
+        imageViewer.querySelector('div').classList.remove('opacity-0');
+      }, 10);
+    });
+  });
+  
+  // 关闭查看器
+  function closeImageViewer() {
+    imageViewer.classList.add('hidden');
+    imageViewer.classList.remove('flex');
+    document.body.style.overflow = ''; // 恢复背景滚动
+    imageViewer.querySelector('div').classList.add('opacity-0');
+    imageViewer.querySelector('div').classList.remove('opacity-100');
+  }
+  
+  closeViewer.addEventListener('click', closeImageViewer);
+  
+  // 点击背景也可关闭
+  imageViewer.addEventListener('click', (e) => {
+    if (e.target === imageViewer) {
+      closeImageViewer();
+    }
+  });
+  
+  // ESC键关闭
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !imageViewer.classList.contains('hidden')) {
+      closeImageViewer();
+    }
+  });
+});
+  </script>
+ </body>
+</html>
